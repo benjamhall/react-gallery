@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-header {
@@ -11,5 +12,11 @@
 
 .App-title {
   font-size: 1.5em;
+}
+
+.App-image {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
 }
 
