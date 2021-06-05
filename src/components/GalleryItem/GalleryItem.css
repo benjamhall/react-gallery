@@ -2,7 +2,8 @@
     border: 1px solid black;
     height: 200px;
     width: 200px;
-    flex: auto
+    flex: auto;
+    text-align: center
 }
 
 .listItem img {
