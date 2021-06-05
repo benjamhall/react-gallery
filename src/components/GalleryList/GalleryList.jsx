@@ -1,13 +1,13 @@
 import GalleryItem from "../GalleryItem/GalleryItem"
 import './GalleryList.css'
 
-function GalleryList ((list, getGalleryList)) {
+function GalleryList ({list, getGalleryList}) {
     return (
         <div>
             {list.map(item => {
                 console.log(item)
                 return (
-                    <Test>
+                    <GalleryItem getGalleryList={getGalleryList} key={item.id} item={item} />
                 )
             })}
         </div>
