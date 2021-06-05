@@ -3,18 +3,18 @@ import './GalleryItem.css';
 import {useState} from 'react'
 
 function GalleryItem ({item, getGalleryList}) {
-
-    const [liked, setLiked] = useState(0);
+    const [isHidden, setIsHidden] = useState(true)
 
     const handleLike = () => {
         console.log('like button works', item);
 
+        const likeCount = item.likes + 1
+
         const data = {
-            isLiked: 
-            counter ++
+            isLiked: likeCount
         }
 
-        axios.put(`/gallery/${item.id}`, data)
+        axios.put(`/gallery/like/${item.id}`, data)
         .then(response => {
             console.log(response);
             getGalleryList();
@@ -24,22 +24,44 @@ function GalleryItem ({item, getGalleryList}) {
 
     }
 
-    const handleDescription = () => {
+    const handleToggle = () => {
         console.log('image clicked', item);
 
+        // const data = {
+        //     isClicked: !item.isClicked
+        // }
+
         axios.put(`/gallery/${item.id}`)
+        .then(response => {
+            console.log(response);
+
+        }).catch(err => {
+            console.log(err)
+        })
             
     }
 
     return (
         <div className="listItem">
-            <div>
+            { isHidden ? (
+                <div>
+                    <img onClick={() => setIsHidden(!isHidden)} src={item.path} />
+                </div>
+            ) : (
+                <div onClick={() => setIsHidden(!isHidden)}>
                 {item.description}
-                <img src={item.path} onClick={handleDescription} />
+                </div>
+            )}
+
+            <div>
+                {/* {item.description}
+                <img src={item.path} onClick={handleToggle} /> */}
                 <button onClick={handleLike}>Like</button>
-                <p>{liked} people liked this!</p>
+                <p>{item.likes} people liked this!</p>
             </div>
-            <button onClick={() => setIsHidden(!isHidden)}></button>
+            {/* <button onClick={() => setIsHidden(!isHidden)}>
+                {!isHidden ? 'Show Photo' : 'Show Info'}
+            </button> */}
             
         </div>
     )

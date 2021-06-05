@@ -1,13 +1,14 @@
 .listItem {
     border: 1px solid black;
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     flex: auto;
+    justify-items: center;
     text-align: center
 }
 
 .listItem img {
-    max-height: 180px;
-    max-width: 180px;
+    max-height: 300px;
+    max-width: 300px;
 
 }
