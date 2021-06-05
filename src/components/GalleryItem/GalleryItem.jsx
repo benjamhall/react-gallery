@@ -10,7 +10,8 @@ function GalleryItem ({item, getGalleryList}) {
         console.log('like button works', item);
 
         const data = {
-            counter
+            isLiked: 
+            counter ++
         }
 
         axios.put(`/gallery/${item.id}`, data)
@@ -23,13 +24,20 @@ function GalleryItem ({item, getGalleryList}) {
 
     }
 
+    const handleDescription = () => {
+        console.log('image clicked', item);
+
+        axios.put(`/gallery/${item.id}`)
+            
+    }
+
     return (
         <div className="listItem">
             <div>
                 {item.description}
-                <img src={item.path} />
+                <img src={item.path} onClick={handleDescription} />
                 <button onClick={handleLike}>Like</button>
-                <p>Likes:{liked} </p>
+                <p>{liked} people liked this!</p>
             </div>
             <button onClick={() => setIsHidden(!isHidden)}></button>
             
