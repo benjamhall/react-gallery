@@ -1,4 +1,4 @@
-// Node Module that will connect to postgesql
+// Node module connect to postgres database
 const pg = require('pg');
 
 // Setup PG to connect to the database

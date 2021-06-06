@@ -9,6 +9,7 @@ function GalleryItem ({item, getGalleryList}) {
     const handleLike = () => {
         console.log('like button works', item);
 
+        //Sends the information to the server
         axios.put(`/gallery/like/${item.id}`)
         .then(response => {
             console.log(response);
