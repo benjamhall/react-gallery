@@ -9,6 +9,7 @@ function GalleryItem ({item, getGalleryList}) {
     const handleLike = () => {
         console.log('like button works', item);
 
+        // likeCount is sets the likes in the database to + 1
         const likeCount = item.likes + 1
 
         const data = {
@@ -53,8 +54,6 @@ function GalleryItem ({item, getGalleryList}) {
             </div>
 
             <div>
-                {/* {item.description}
-                <img src={item.path} onClick={handleToggle} /> */}
                 <button onClick={handleLike}>Like</button>
                 <button onClick={handleDelete}>Delete</button>
                 <p>{item.likes} people liked this!</p>
