@@ -9,14 +9,7 @@ function GalleryItem ({item, getGalleryList}) {
     const handleLike = () => {
         console.log('like button works', item);
 
-        // likeCount is sets the likes in the database to + 1
-        const likeCount = item.likes + 1
-
-        const data = {
-            isLiked: likeCount
-        }
-
-        axios.put(`/gallery/like/${item.id}`, data)
+        axios.put(`/gallery/like/${item.id}`)
         .then(response => {
             console.log(response);
             getGalleryList();
