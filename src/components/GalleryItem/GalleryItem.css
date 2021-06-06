@@ -8,8 +8,11 @@
 }
 
 .listItem img {
-    max-height: 300px;
-    max-width: 300px;
+    max-width: 275px;
+    min-width: 150px;
+    max-height: 250px;
+    min-height: 200px;
     border: 1px solid black;
 
 }
+

@@ -24,23 +24,6 @@ function GalleryItem ({item, getGalleryList}) {
 
     }
 
-    // const handleToggle = () => {
-    //     console.log('image clicked', item);
-
-    //     // const data = {
-    //     //     isClicked: !item.isClicked
-    //     // }
-
-    //     axios.put(`/gallery/${item.id}`)
-    //     .then(response => {
-    //         console.log(response);
-
-    //     }).catch(err => {
-    //         console.log(err)
-    //     })
-            
-    // }
-
     return (
         <div className="listItem">
             { isHidden ? (
