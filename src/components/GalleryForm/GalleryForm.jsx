@@ -15,11 +15,22 @@ function GalleryForm ({getGalleryList}) {
             description: descriptionInput
         }
 
+        //Submit the information in the input fields to the server
         axios.post('/gallery', newPhoto).then(response => {
-            getGalleryList()
+            console.log(response);
+            getGalleryList();
+            clearInputs();
         }).catch(err=> {
             console.error(err);
         })
+    }
+
+    //Clear input fields by resetting the item
+    const clearInputs = () => {
+        console.log('in inputs');
+
+        setPathInput('');
+        setDescriptionInput('');
     }
     
         return (
@@ -28,12 +39,12 @@ function GalleryForm ({getGalleryList}) {
                     <input
                         value={pathInput}
                         onChange={(event) => setPathInput(event.target.value)}
-                        placeholder="url"
+                        placeholder=" Valid url"
                         />
                     <input
                         value={descriptionInput}
                         onChange={(event) => setDescriptionInput(event.target.value)}
-                        placeholder="description"
+                        placeholder="Description"
                         />
                     <button type="submit">Add to Gallery</button>
                     
