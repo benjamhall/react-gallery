@@ -1,9 +1,21 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# React Gallery
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is a React CRUD app that allows a user to input their own image from a url (or add an image to the project if they have access) and provide a description. Each image has a like counter for others to view and 'like' as well as a remove function for images that the user wants to delete.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+
+## Usage
+Have you ever wanted to display some photos and get feedback from people on which photos look the best? Here is a great way to display your images and get them set up. 
+
+## Contributor 
+Ben Hall
+
+## Built Name
+JavaScript, ReactJS, NodeJS, Express, PostgreSQL, bodyParser, HTML and CSS. 
+
+## Acknowledgement
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. 
+
+## Support
+If you have suggestions or issues, please email me at benjamhall@gmail.com

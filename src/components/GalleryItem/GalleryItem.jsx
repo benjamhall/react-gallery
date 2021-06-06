@@ -54,7 +54,7 @@ function GalleryItem ({item, getGalleryList}) {
             {/* <button onClick={() => setIsHidden(!isHidden)}>
                 {!isHidden ? 'Show Photo' : 'Show Info'}
             </button> */}
-            
+
         </div>
     )
 };
