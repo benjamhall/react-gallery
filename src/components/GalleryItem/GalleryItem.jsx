@@ -5,6 +5,7 @@ import {useState} from 'react'
 function GalleryItem ({item, getGalleryList}) {
     const [isHidden, setIsHidden] = useState(true)
 
+    // This function handles the Like button, so that when it is clicked it will update the number of likes
     const handleLike = () => {
         console.log('like button works', item);
 
@@ -24,9 +25,22 @@ function GalleryItem ({item, getGalleryList}) {
 
     }
 
+    // Deletes image from the database
+    const handleDelete = () => {
+        console.log('delete button clicked');
+        axios.delete(`/gallery/${item.id}`)
+        .then(response => {
+            console.log(response);
+            getGalleryList();
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }
+
     return (
         <div className="listItem">
-            <div onClick={() => setIsHidden(!isHidden)}>
+            <div onClick={() => setIsHidden(!isHidden)} className="listItem" >
             { isHidden ? (
                 <div>
                     <img onClick={() => setIsHidden(!isHidden)} src={item.path} />
@@ -42,6 +56,7 @@ function GalleryItem ({item, getGalleryList}) {
                 {/* {item.description}
                 <img src={item.path} onClick={handleToggle} /> */}
                 <button onClick={handleLike}>Like</button>
+                <button onClick={handleDelete}>Delete</button>
                 <p>{item.likes} people liked this!</p>
             </div>
             {/* <button onClick={() => setIsHidden(!isHidden)}>
