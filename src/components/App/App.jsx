@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import GalleryForm from '../GalleryForm/GalleryForm.jsx';
 import GalleryList from '../GalleryList/GalleryList.jsx';
 
 function App() {
