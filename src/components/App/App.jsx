@@ -32,6 +32,7 @@ function App() {
           <h1 className="App-title">Welcome to Ben's Gallery</h1>
         </header>
         <main>
+          <h2>Add to the Gallery</h2>
           <GalleryForm getGalleryList={getGalleryList} />
           <GalleryList list={galleryList} getGalleryList={getGalleryList} />
         </main>

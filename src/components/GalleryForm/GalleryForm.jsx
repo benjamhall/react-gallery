@@ -41,4 +41,6 @@ function GalleryForm ({getGalleryList}) {
             </div>
         )
 }
+
+export default GalleryForm;
     
