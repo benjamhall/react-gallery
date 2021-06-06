@@ -5,6 +5,7 @@
     justify-items: center;
     text-align: center;
     display: inline-block;
+    margin: 10px;
 }
 
 .listItem img {

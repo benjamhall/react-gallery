@@ -30,7 +30,10 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Welcome to Ben's Gallery</h1>
         </header>
-        <GalleryList list={galleryList} getGalleryList={getGalleryList} />
+        <main>
+          <GalleryForm getGalleryList={getGalleryList} />
+          <GalleryList list={galleryList} getGalleryList={getGalleryList} />
+        </main>
       </div>
     );
 }
