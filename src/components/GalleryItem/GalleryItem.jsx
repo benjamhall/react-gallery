@@ -26,26 +26,26 @@ function GalleryItem ({item, getGalleryList}) {
 
     return (
         <div className="listItem">
-            { isHidden ? (
-                <div>
-                    <img onClick={() => setIsHidden(!isHidden)} src={item.path} />
-                </div>
-            ) : (
-                <div onClick={() => setIsHidden(!isHidden)}>
-                {item.description}
-                </div>
-            )}
+            <div onClick={() => setIsHidden(!isHidden)} className="listItem" >
+                {isHidden ? (
+                    <div>
+                        <img onClick={() => setIsHidden(!isHidden)} src={item.path} />
+                    </div>
+                ) : (
+                    <div onClick={() => setIsHidden(!isHidden)}>
+                        {item.description}
+                    </div>
+                )}
+            </div>
 
             <div>
-                {/* {item.description}
-                <img src={item.path} onClick={handleToggle} /> */}
                 <button onClick={handleLike}>Like</button>
                 <p>{item.likes} people liked this!</p>
             </div>
             {/* <button onClick={() => setIsHidden(!isHidden)}>
                 {!isHidden ? 'Show Photo' : 'Show Info'}
             </button> */}
-            
+
         </div>
     )
 };
