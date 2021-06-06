@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import GalleryList from '../GalleryList/GalleryList.jsx';
 import GalleryItem from '../GalleryItem/GalleryItem.jsx';
-import GalleryList from '../GalleryList/GalleryList.jsx'
 
 function App() {
   
@@ -32,10 +32,6 @@ function App() {
           <h1 className="App-title">Welcome to Ben's Gallery</h1>
         </header>
         <GalleryList list={galleryList} getGalleryList={getGalleryList} />
-        {/* <img src="images/goat_small.jpg" className="App-image"/>
-        <img src="images/crawfish.jpg" className="App-image"/>
-        <img src="images/bike.jpg" className="App-image"/> */}
-
       </div>
     );
 }
