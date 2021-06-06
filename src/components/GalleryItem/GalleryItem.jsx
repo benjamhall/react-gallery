@@ -5,16 +5,24 @@ import {useState} from 'react'
 function GalleryItem ({item, getGalleryList}) {
     const [isHidden, setIsHidden] = useState(true)
 
+    // This function handles the Like button, so that when it is clicked it will update the number of likes
     const handleLike = () => {
         console.log('like button works', item);
 
-        const likeCount = item.likes + 1
+        axios.put(`/gallery/like/${item.id}`)
+        .then(response => {
+            console.log(response);
+            getGalleryList();
+        }).catch(err => {
+            console.log(err);
+        })
 
-        const data = {
-            isLiked: likeCount
-        }
+    }
 
-        axios.put(`/gallery/like/${item.id}`, data)
+    // Deletes image from the database
+    const handleDelete = () => {
+        console.log('delete button clicked');
+        axios.delete(`/gallery/${item.id}`)
         .then(response => {
             console.log(response);
             getGalleryList();
@@ -27,19 +35,20 @@ function GalleryItem ({item, getGalleryList}) {
     return (
         <div className="listItem">
             <div onClick={() => setIsHidden(!isHidden)} className="listItem" >
-                {isHidden ? (
-                    <div>
-                        <img onClick={() => setIsHidden(!isHidden)} src={item.path} />
-                    </div>
-                ) : (
-                    <div onClick={() => setIsHidden(!isHidden)}>
-                        {item.description}
-                    </div>
-                )}
+            { isHidden ? (
+                <div>
+                    <img onClick={() => setIsHidden(!isHidden)} src={item.path} />
+                </div>
+            ) : (
+                <div onClick={() => setIsHidden(!isHidden)}>
+                {item.description}
+                </div>
+            )}
             </div>
 
             <div>
                 <button onClick={handleLike}>Like</button>
+                <button onClick={handleDelete}>Delete</button>
                 <p>{item.likes} people liked this!</p>
             </div>
             {/* <button onClick={() => setIsHidden(!isHidden)}>
