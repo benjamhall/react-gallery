@@ -26,6 +26,7 @@ function GalleryItem ({item, getGalleryList}) {
 
     return (
         <div className="listItem">
+            <div onClick={() => setIsHidden(!isHidden)}>
             { isHidden ? (
                 <div>
                     <img onClick={() => setIsHidden(!isHidden)} src={item.path} />
@@ -35,6 +36,7 @@ function GalleryItem ({item, getGalleryList}) {
                 {item.description}
                 </div>
             )}
+            </div>
 
             <div>
                 {/* {item.description}
